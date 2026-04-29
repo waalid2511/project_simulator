@@ -2,7 +2,7 @@
 
 <div class="container mt-4">
     <div class="row">
-        <!-- Sidebar Menu -->
+        
         <div class="col-md-3 mb-4">
             <div class="card glass-card shadow-sm border-0">
                 <div class="card-body text-center">
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <!-- Main Content -->
+        
         <div class="col-md-9">
             <div class="card glass-card shadow-sm border-0">
                 <div class="card-header bg-white border-bottom-0 pt-4 pb-0">
@@ -53,7 +53,6 @@
     </div>
 </div>
 
-<!-- Tambahan Icon Bootstrap -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 <style>
