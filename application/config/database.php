@@ -78,7 +78,11 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
+<<<<<<< HEAD
 	'database' => 'MANAJEMEN_BENGKEL_MOTOR',
+=======
+	'database' => 'db_bengkel_motor',
+>>>>>>> ad84e4d10bba63d93c0e5bdc26e96fd7a0656dfa
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

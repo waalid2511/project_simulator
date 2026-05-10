@@ -100,5 +100,14 @@ class CI_Controller {
 	{
 		return self::$instance;
 	}
+<<<<<<< HEAD
+=======
+	public function loadPartials($data1='',$data2='') 
+	{ 
+	$this->load->view('_partials/headers'); 
+	$this->load->view($data1.'',$data2); 
+	$this->load->view('_partials/footer'); 
+	} 
+>>>>>>> ad84e4d10bba63d93c0e5bdc26e96fd7a0656dfa
 
 }

@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/MANAJEMEN_BENGKEL_MOTOR/';
+=======
+$config['base_url'] = 'http://localhost/project_simulator/';
+>>>>>>> ad84e4d10bba63d93c0e5bdc26e96fd7a0656dfa
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +39,11 @@ $config['base_url'] = 'http://localhost/MANAJEMEN_BENGKEL_MOTOR/';
 | variable so that it is blank.
 |
 */
+<<<<<<< HEAD
 $config['index_page'] = 'index.php';
+=======
+$config['index_page'] = '';
+>>>>>>> ad84e4d10bba63d93c0e5bdc26e96fd7a0656dfa
 
 /*
 |--------------------------------------------------------------------------
