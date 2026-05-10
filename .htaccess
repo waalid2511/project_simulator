@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]
-=======
-RewriteEngine On 
-RewriteCond %{REQUEST_FILENAME} !-f 
-RewriteCond %{REQUEST_FILENAME} !-d 
-RewriteRule ^(.*)$ index.php/$1 [L] 
->>>>>>> ad84e4d10bba63d93c0e5bdc26e96fd7a0656dfa
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /MANAJEMEN_BENGKEL_MOTOR/
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
