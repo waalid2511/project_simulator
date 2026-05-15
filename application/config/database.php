@@ -79,7 +79,7 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 'MANAJEMEN_BENGKEL_MOTOR',
-	'database' => 'db_bengkel_motor',
+	//'database' => 'db_bengkel_motor',//
 	
 
 	'dbdriver' => 'mysqli',
