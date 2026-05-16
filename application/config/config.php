@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/MANAJEMEN_BENGKEL_MOTOR/';
-
+$config['base_url'] = 'http://localhost/project_simulator/';
 $config['index_page'] = '';
 
 /*
