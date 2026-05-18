@@ -21,11 +21,11 @@ class Login extends MY_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required');
 
         if ($this->form_validation->run() == FALSE) {
-            // Tampilkan halaman login jika validasi gagal
+            
             $data['titlePage'] = 'Login Bengkel';
             $this->loadPartials('login', $data);
         } else {
-            // Cek login
+            
             $this->proses_login();
         }
     }
@@ -38,7 +38,7 @@ class Login extends MY_Controller {
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
-                // Simpan data user ke session (termasuk role untuk akses berbeda tiap role)
+                
                 $data = [
                     'id'       => $user['id'],
                     'nama'     => $user['nama'],

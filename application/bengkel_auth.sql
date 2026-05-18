@@ -1,7 +1,3 @@
--- ============================================================
--- DATABASE: Sistem Manajemen Bengkel Motor "Maju Jaya"
--- UAS - Pemrograman Web dengan CodeIgniter 3
--- ============================================================
 
 CREATE DATABASE IF NOT EXISTS `db_bengkel_motor`
   CHARACTER SET utf8mb4
@@ -9,10 +5,6 @@ CREATE DATABASE IF NOT EXISTS `db_bengkel_motor`
 
 USE `db_bengkel_motor`;
 
--- ============================================================
--- 1. TABEL USER (Fitur Authorization - Login & Dashboard)
---    Dikerjakan oleh: [Nama Anda]
--- ============================================================
 CREATE TABLE IF NOT EXISTS `user` (
   `id`       INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nama`     VARCHAR(100) NOT NULL,
@@ -23,10 +15,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `uk_username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Data user awal (password di-hash dengan password_hash)
--- admin     → password: admin123
--- mekanik   → password: mekanik123
--- kasir     → password: kasir123
 INSERT INTO `user` (`nama`, `username`, `password`, `role`) VALUES
 ('Administrator', 'admin',   '$2y$10$2.iCyjri3dausc2E0PS.0eykQUZEGYcjioh.frbsRCR3X6.qMuMTq', 'admin'),
 ('Mekanik Utama', 'mekanik', '$2y$10$tj.xPl3.EzA4PwEWd66VZ.gZGMpnAXfBZcbCV74tie27G2NWKTRma', 'mekanik'),
@@ -34,10 +22,6 @@ INSERT INTO `user` (`nama`, `username`, `password`, `role`) VALUES
 ON DUPLICATE KEY UPDATE
   `nama` = VALUES(`nama`), `password` = VALUES(`password`), `role` = VALUES(`role`);
 
--- ============================================================
--- 2. TABEL PELANGGAN (Fitur Manajemen Pelanggan)
---    Dikerjakan oleh: [Anggota Tim]
--- ============================================================
 CREATE TABLE IF NOT EXISTS `pelanggan` (
   `id`       INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nama`     VARCHAR(100) NOT NULL,
@@ -47,11 +31,7 @@ CREATE TABLE IF NOT EXISTS `pelanggan` (
   UNIQUE KEY `uk_no_hp` (`no_hp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
--- 3. TABEL KENDARAAN (Fitur Manajemen Kendaraan)
---    Satu pelanggan bisa punya banyak kendaraan (one-to-many)
---    Dikerjakan oleh: [Anggota Tim]
--- ============================================================
+
 CREATE TABLE IF NOT EXISTS `kendaraan` (
   `id`           INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_pelanggan` INT UNSIGNED NOT NULL,
@@ -67,11 +47,7 @@ CREATE TABLE IF NOT EXISTS `kendaraan` (
     ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
--- 4. TABEL ANTRIAN (Fitur Manajemen Antrian & Servis)
---    Nomor antrian reset setiap hari
---    Dikerjakan oleh: [Anggota Tim]
--- ============================================================
+
 CREATE TABLE IF NOT EXISTS `antrian` (
   `id`           INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `no_antrian`   INT          NOT NULL,
@@ -90,10 +66,7 @@ CREATE TABLE IF NOT EXISTS `antrian` (
     FOREIGN KEY (`id_pelanggan`) REFERENCES `pelanggan` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
--- 5. TABEL SERVIS (Detail Servis)
---    Dikerjakan oleh: [Anggota Tim]
--- ============================================================
+
 CREATE TABLE IF NOT EXISTS `servis` (
   `id`          INT UNSIGNED   NOT NULL AUTO_INCREMENT,
   `id_antrian`  INT UNSIGNED   NOT NULL,
@@ -107,10 +80,6 @@ CREATE TABLE IF NOT EXISTS `servis` (
     ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
--- 6. TABEL SPAREPART (Detail Sparepart)
---    Dikerjakan oleh: [Anggota Tim]
--- ============================================================
 CREATE TABLE IF NOT EXISTS `sparepart` (
   `id`          INT UNSIGNED   NOT NULL AUTO_INCREMENT,
   `id_antrian`  INT UNSIGNED   NOT NULL,
@@ -124,10 +93,7 @@ CREATE TABLE IF NOT EXISTS `sparepart` (
     ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
--- 7. TABEL TRANSAKSI (Fitur Transaksi & Pembayaran)
---    Dikerjakan oleh: [Anggota Tim]
--- ============================================================
+
 CREATE TABLE IF NOT EXISTS `transaksi` (
   `id`           INT UNSIGNED   NOT NULL AUTO_INCREMENT,
   `id_antrian`   INT UNSIGNED   NOT NULL,

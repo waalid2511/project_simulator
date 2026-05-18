@@ -8,7 +8,7 @@ class Dashboard extends MY_Controller {
         parent::__construct();
         $this->load->helper('url');
 
-        // Cek session id sesuai pola modul Praktikum 4
+        
         if (!$this->session->userdata('id')) {
             redirect('login');
         }
@@ -16,7 +16,7 @@ class Dashboard extends MY_Controller {
 
     public function index()
     {
-        // Routing ke dashboard sesuai role (kebutuhan UAS Bengkel Motor)
+        
         $role = $this->session->userdata('role');
 
         if ($role === 'admin') {
@@ -26,7 +26,7 @@ class Dashboard extends MY_Controller {
         } elseif ($role === 'kasir') {
             redirect('backend/dashboard/kasir');
         } else {
-            // Role tidak dikenal, paksa logout
+            
             $this->session->unset_userdata('id');
             redirect('login');
         }
@@ -34,7 +34,7 @@ class Dashboard extends MY_Controller {
 
     public function admin()
     {
-        // Pastikan hanya admin yang bisa akses
+        
         if ($this->session->userdata('role') !== 'admin') {
             redirect('backend/dashboard');
         }
@@ -49,7 +49,7 @@ class Dashboard extends MY_Controller {
 
     public function mekanik()
     {
-        // Pastikan hanya mekanik yang bisa akses
+        
         if ($this->session->userdata('role') !== 'mekanik') {
             redirect('backend/dashboard');
         }
@@ -64,7 +64,7 @@ class Dashboard extends MY_Controller {
 
     public function kasir()
     {
-        // Pastikan hanya kasir yang bisa akses
+        
         if ($this->session->userdata('role') !== 'kasir') {
             redirect('backend/dashboard');
         }
